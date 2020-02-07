@@ -397,6 +397,30 @@ export default [{
                 size: 2540000
             }
         ]
+    },{
+        subject: '',
+        content: `
+            <p>Я предлагаю участвовать в своем проекте</p>
+            <p>От вас требуется разработка некой игры, используя технологии JavaScript.</p>
+            <p>Зарплата договорная.</p>
+            <p>Сроки прямо сейчас</p>
+            <p>Мои контакты: <a href="mailto://baraded105@yandex.ru">baraded105@yandex.ru</a></p>
+        `,
+        isImportant: true,
+        isDeleted: false,
+        isRead: false,
+        type: 'incoming',
+        date: moment().subtract(3, 'weeks'),
+        from: {
+            name: 'Денис Левин',
+            email: 'baraded105@yandex.ru'
+        },
+        attachments: [
+            {
+                fileName: 'SuperWork.pdf',
+                size: 2540000
+            }
+        ]
     }
     	]
     }
