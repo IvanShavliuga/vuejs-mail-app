@@ -1,12 +1,16 @@
 <template>
     <aside class="sm-side">
         <div class="user-head">
-            <img src="src/assets/images/profile.jpg">
+            
+            <img :src="user.avatar">
 
             <div class="user-name">
+                
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
+                <app-user></app-user>
             </div>
+            
         </div>
 
         <div class="compose-wrapper">
@@ -44,7 +48,8 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-
+    import User from './user.vue';    
+    
     export default {
         props: {
             messages: {
@@ -97,7 +102,8 @@
             }
         },
         components: {
-            appCompose: Compose
+            appCompose: Compose,
+            appUser: User
         }
     }
 </script>

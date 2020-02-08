@@ -17,6 +17,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(10, 'minutes'),
         from: {
@@ -38,6 +39,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(30, 'minutes'),
         from: {
@@ -56,6 +58,7 @@ export default [{
         isImportant: true,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(75, 'minutes'),
         from: {
@@ -75,6 +78,7 @@ export default [{
         isImportant: true,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(2, 'days'),
         from: {
@@ -95,6 +99,7 @@ export default [{
             <p>Let me know if you get this, because who really uses e-mail these days?</p>
         `,
         isDeleted: false,
+        isSpam: false,
         type: 'outgoing',
         date: moment().subtract(7, 'days'),
         from: {
@@ -113,6 +118,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(2, 'weeks'),
         from: {
@@ -138,6 +144,7 @@ export default [{
         isImportant: true,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(2, 'months'),
         from: {
@@ -157,6 +164,7 @@ export default [{
         isImportant: false,
         isDeleted: true,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(3, 'months'),
         from: {
@@ -176,6 +184,7 @@ export default [{
         `,
         isDeleted: false,
         type: 'outgoing',
+        isSpam: false,
         date: moment().subtract(100, 'days'),
         from: {
             name: 'Bo Andersen',
@@ -192,6 +201,7 @@ export default [{
             <p>Let me know!</p>
         `,
         isDeleted: false,
+        isSpam: false,
         type: 'outgoing',
         date: moment().subtract(4, 'months'),
         from: {
@@ -211,6 +221,7 @@ export default [{
         isDeleted: true,
         isRead: true,
         type: 'incoming',
+        isSpam: false,
         date: moment().subtract(5, 'months'),
         from: {
             name: 'Tax Authorities',
@@ -234,6 +245,7 @@ export default [{
             <p>An Angry Customer</p>
         `,
         isDeleted: false,
+        isSpam: false,
         type: 'outgoing',
         date: moment().subtract(6, 'months'),
         from: {
@@ -255,6 +267,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(7, 'months'),
         from: {
@@ -278,6 +291,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(8, 'months'),
         from: {
@@ -304,6 +318,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(9, 'months'),
         from: {
@@ -324,6 +339,7 @@ export default [{
         isImportant: false,
         isDeleted: false,
         isRead: true,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(10, 'months'),
         from: {
@@ -362,6 +378,7 @@ export default [{
         isImportant: true,
         isDeleted: false,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(1, 'hours'),
         from: {
@@ -385,6 +402,7 @@ export default [{
         isImportant: true,
         isDeleted: false,
         isRead: false,
+        isSpam: false,
         type: 'incoming',
         date: moment().subtract(3, 'days'),
         from: {
@@ -406,9 +424,10 @@ export default [{
             <p>Сроки прямо сейчас</p>
             <p>Мои контакты: <a href="mailto://baraded105@yandex.ru">baraded105@yandex.ru</a></p>
         `,
-        isImportant: true,
-        isDeleted: false,
+        isImportant: false,
+        isDeleted: true,
         isRead: false,
+        isSpam: true,
         type: 'incoming',
         date: moment().subtract(3, 'weeks'),
         from: {
@@ -421,7 +440,30 @@ export default [{
                 size: 2540000
             }
         ]
+    },{
+        subject: 'Аккаунт на family-tree.org успешно удален',
+        content: `
+            <p>Аккаунт ivx2 на сайте family-tree.org успешно удален</p>
+            <p style="border:1px dotted #f00;background:#f00;color:yellow;">
+            Сайт family-tree.org. Все генеологические линии вашего рода в прямом доступе в интернете.
+            Вообрази себя дворянином.</p>
+        `,
+        isImportant: false,
+        isDeleted: true,
+        isRead: true,
+        isSpam: false,
+        type: 'incoming',
+        date: moment().subtract(9, 'years'),
+        from: {
+            name: 'family-tree,org',
+            email: 'baraded105@yandex.ru'
+        },
+        attachments: [
+            {
+                fileName: 'Закон о персональных данных.pdf',
+                size: 56643235
+            }
+        ]
     }
-    	]
-    }
+    ]} 
 ]
