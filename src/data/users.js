@@ -363,7 +363,7 @@ export default [{
     	messages:[{
         subject: 'Forked vuejs-mail-app',
         content: `
-            <p>User Ivan Ivanov (Shavliouga) forked project Bo Andersen vuejs-mail-app</p>
+            <p>User Ivan Ivanov (Shavliuga) forked project Bo Andersen vuejs-mail-app</p>
             <p>Added users.js</p>
             <p>contact: <a href='mailto://iva.drakon.nov@gmail.com'>iva.drakon.nov@gmail.com</a></p>
             <p>profession: junior frontend developer</p>
