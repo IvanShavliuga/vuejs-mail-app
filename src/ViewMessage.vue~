@@ -10,7 +10,7 @@
             </button>
             
            <button class="btn btn-danger" @click="data.message.isSpam = true" :disabled="data.message.isSpam">
-                <i class="fa fa-warning"></i>&nbsp; {{ data.message.isSpam ? 'Fixed as spam' : 'SPAM' }}
+                <i class="fa fa-warning"></i>&nbsp; {{ data.message.isSpam ? 'Fixed as spam' : 'Spam' }}
             </button>            
             
             <template v-if="typeof data.message.isRead !== 'undefined'">

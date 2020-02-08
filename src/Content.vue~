@@ -17,7 +17,7 @@
     import Important from './Important.vue';
     import Trash from './Trash.vue';
     import ViewMessage from './ViewMessage.vue';
-    import Spam from '/Spam.vue'    
+    import Spam from './Spam.vue'    
     
     export default {
         props: {
