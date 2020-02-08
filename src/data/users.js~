@@ -440,8 +440,6 @@ export default [{
                 size: 2540000
             }
         ]
-    }
-    	]
     },{
         subject: 'Аккаунт на family-tree.org успешно удален',
         content: `
@@ -467,5 +465,5 @@ export default [{
             }
         ]
     }
-
+    ]} 
 ]

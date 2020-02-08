@@ -41,6 +41,13 @@
                     <i class=" fa fa-trash-o"></i>Trash <span class="label label-default pull-right">{{ trashedMessages.length }}</span>
                 </a>
             </li>
+            
+            <li :class="{ active: activeView == 'app-spam' }">
+                <a href="#" @click.prevent="navigate('app-spam', 'Spam')">
+                    <i class=" fa fa-warning"></i>Spam <span class="label label-default pull-right">{{ spamMessages.length }}</span>
+                </a>
+            </li>
+            
         </ul>
     </aside>
 </template>
@@ -98,6 +105,11 @@
             trashedMessages() {
                 return this.messages.filter(function(message) {
                     return message.isDeleted === true;
+                });
+            },
+            spamMessages() {
+                return this.messages.filter(function(message) {
+                    return message.isSpam === true;
                 });
             }
         },

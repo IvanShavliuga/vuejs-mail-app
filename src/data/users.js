@@ -394,7 +394,7 @@ export default [{
     },{
         subject: 'installed the linux operating system rosa R8 mate',
         content: `
-            <p>User Ivan Ivanov (Shavliouga) finstalled the linux operating system rosa R8 mate</p>
+            <p>User Ivan Ivanov (Shavliuga) finstalled the linux operating system rosa R8 mate</p>
             <p>installed the linux operating system rosa R8 mate. </p>
             <p>The computer is very old and broken. However, it works and can be programmed on it. 
             Windows XP eats twice as much memory as the Russian operating system LINUX ROSA</p>

@@ -1,9 +1,10 @@
 <template>
     <div class="container">
         <div class="mail-box">
-            <app-sidebar :messages="messages"></app-sidebar>
+            <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         </div>
+        
     </div>
 </template>
 
@@ -14,12 +15,13 @@
     /*import messages from './data/messages';
     import randomMessages from './data/random-messages';*/
     import { eventBus } from './main';
-
+    let userId=0; // for test
     export default {
         data() {
             return {
-                user: users[1],
-                messages: users[1].messages
+                userId:userId,
+                user: users[userId],
+                messages: users[userId].messages
             };
         }/*,
         created() {

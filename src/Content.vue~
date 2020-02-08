@@ -10,7 +10,7 @@
     </aside>
 </template>
 
-<script>       
+<script>
     import { eventBus } from './main';
     import Inbox from './Inbox.vue';
     import Sent from './Sent.vue';

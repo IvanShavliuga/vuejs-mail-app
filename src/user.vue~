@@ -55,6 +55,7 @@
     }
 </script>
 <style>
-a {
+#link {
+   color:#fff;
 }
 </style>

@@ -7,7 +7,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">&times;</button>
-                        <h4 class="modal-title">User data {{user.user}}</h4>
+                        <h4 class="modal-title" style="color:black">User data {{user.user}}</h4>
                     </div>
 
                     <div class="modal-body">
