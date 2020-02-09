@@ -12,24 +12,37 @@
 
                     <div class="modal-body">
                         <form  role="form" class="form-horizontal">
+                             <div class="row">                                 
+                             <div class="col-lg-2">
+                                    <img :src="user.avatar">
+                             </div> 
+                             <div class="col-lg-10">
+                             <div class="form-group">
+                                <label class="control-label" style="color:black" for="subject">Login</label>
+                                
+                                    <input type="text" v-model="user.user" id="user" class="form-control" disabled>
+                                
+                            </div>
                             <div class="form-group">
-                                <label class="col-lg-2 control-label" for="subject">Name</label>
-                                <div class="col-lg-10">
+                                <label class="control-label" style="color:black" for="subject">Name</label>
+                                
                                     <input type="text" v-model="user.name" id="name" class="form-control">
-                                </div>
+                                
                             </div>
 									 <div class="form-group">
-                                <label class="col-lg-2 control-label" for="subject">Site</label>
-                                <div class="col-lg-10">
+                                <label class="control-label" style="color:black" for="subject">Site</label>
+                                
                                     <input type="text" v-model="user.site" id="site" class="form-control">
-                                </div>
+                                
                             </div>
                             
 
                             <div class="form-group">
                                 <div class="col-lg-offset-2 col-lg-10">
-                                    <button class="btn btn-send" type="submit">Submit</button>
+                                    <button class="btn btn-send" type="submit" @click.prevent="submit">submit</button>
                                 </div>
+                            </div>
+                            </div>
                             </div>
                         </form>
                     </div>
@@ -52,11 +65,32 @@
                     avatar:"src/assets/images/bo.jpg",
                     email:"info@codingexplained.com",
                     password: '12345'
+                }
             };
         },
         props:{
-            user
-        }
+            user:{
+                type: Object,
+                required: true
+            }
+        },
+        created() {
+            eventBus.$on('userView', (data) => {
+                this.user = data;
+                console.log(data);
+            });
+        }/*,
+        methods:{
+           submit(){
+                eventBus.$emit('userChange', {
+                    tag: 'app-user',
+                    title: user.name,
+                    data: {
+                        user: user
+                    }
+                });
+           }
+        }*/
     }
 </script>
 <style>

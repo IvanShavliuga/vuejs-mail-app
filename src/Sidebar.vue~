@@ -8,7 +8,7 @@
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user></app-user>
+                <app-user :user="user"></app-user>
             </div>
             
         </div>
@@ -44,7 +44,7 @@
             
             <li :class="{ active: activeView == 'app-spam' }">
                 <a href="#" @click.prevent="navigate('app-spam', 'Spam')">
-                    <i class=" fa fa-warning"></i>Trash <span class="label label-default pull-right">{{ spamMessages.length }}</span>
+                    <i class=" fa fa-warning"></i>Spam <span class="label label-default pull-right">{{ spamMessages.length }}</span>
                 </a>
             </li>
             
@@ -55,7 +55,7 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-    import User from './user.vue';    
+    import User from './User.vue';    
     
     export default {
         props: {
