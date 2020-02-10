@@ -15,7 +15,7 @@
     /*import messages from './data/messages';
     import randomMessages from './data/random-messages';*/
     import { eventBus } from './main';
-    let userId=0; // for test
+    let userId=1; // for test
     export default {
         data() {
             return {

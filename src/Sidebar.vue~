@@ -1,17 +1,19 @@
 <template>
     <aside class="sm-side">
-        <div class="user-head">
+        <table class="user-head">
+            <tr>
+            <td class="user-data">
             
             <img :src="user.avatar">
-
-            <div class="user-name">
+            </td>
+            <td class="user-name">
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user :user="user"></app-user>
-            </div>
-            
-        </div>
+                <app-user></app-user>
+            </td>
+            </tr>
+        </table>
 
         <div class="compose-wrapper">
             <app-compose></app-compose>
@@ -55,7 +57,7 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-    import User from './User.vue';    
+    import User from './user.vue';    
     
     export default {
         props: {

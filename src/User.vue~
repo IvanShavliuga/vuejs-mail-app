@@ -58,7 +58,7 @@
     export default {
         data() {
             return {
-                user: {
+                useredit: {
                     user: "BoAndersen",
                     site:"http://www.codingexplained.com",
                     name:"Bo Andersen",
@@ -73,13 +73,13 @@
                 type: Object,
                 required: true
             }
-        },
+        }/*,
         created() {
             eventBus.$on('userView', (data) => {
                 this.user = data;
                 console.log(data);
             });
-        }/*,
+        },
         methods:{
            submit(){
                 eventBus.$emit('userChange', {
