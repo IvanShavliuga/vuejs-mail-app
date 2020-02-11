@@ -2,7 +2,7 @@
     <aside class="sm-side">
         <table class="user-head">
             <tr>
-            <td class="user-data">
+            <td class="user-avatar">
             
             <img :src="user.avatar">
             </td>
@@ -57,7 +57,7 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-    import User from './user.vue';    
+    import User from './User.vue';    
     
     export default {
         props: {

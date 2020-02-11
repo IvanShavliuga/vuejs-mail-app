@@ -43,6 +43,12 @@
     import { eventBus } from './main';
 
     export default {
+        props: {
+            user:{
+                type: Object,
+                required: true
+            }
+        },
         data() {
             return {
                 user: {

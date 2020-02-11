@@ -10,7 +10,7 @@
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user></app-user>
+                <app-user :user="user"></app-user>
             </td>
             </tr>
         </table>
@@ -57,7 +57,7 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-    import User from './user.vue';    
+    import User from './User.vue';    
     
     export default {
         props: {

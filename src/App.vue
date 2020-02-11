@@ -1,6 +1,8 @@
 <template>
     <div class="container">
+        <input type="number" v-model="userId"/><button @click="changeUser">change</button>
         <div class="mail-box">
+            
             <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         </div>
@@ -23,7 +25,13 @@
                 user: users[userId],
                 messages: users[userId].messages
             };
-        }/*,
+        },
+        methods: {
+            changeUser() {
+                this.user=users[this.userId];
+                this.messages=user[this.userId].messages;             
+            }
+        },/*,
         created() {
             eventBus.$on('refreshMessages', () => {
                 let randomIndex = Math.floor(Math.random() * randomMessages.length);
@@ -35,7 +43,7 @@
                 let temp = [data.message];
                 this.messages = temp.concat(this.messages.slice(0));
             });
-        }*/,
+        }*/
         components: {
             appSidebar: Sidebar,
             appContent: Content
