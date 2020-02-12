@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <input type="number" v-model="userId"/><button @click="changeUser">change</button>
+        User id: <input type="number" v-model="userId"/><button @click="changeUser">change</button>
         <div class="mail-box">
             
             <app-sidebar :messages="messages" :user="user"></app-sidebar>
@@ -29,7 +29,7 @@
         methods: {
             changeUser() {
                 this.user=users[this.userId];
-                this.messages=user[this.userId].messages;             
+                this.messages=users[this.userId].messages;             
             }
         },/*,
         created() {

@@ -10,7 +10,7 @@
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user></app-user>
+                <app-user :user="user"></app-user>
             </td>
             </tr>
         </table>
