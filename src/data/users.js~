@@ -5,6 +5,7 @@ export default [{
      name:"Bo Andersen",
      avatar:"src/assets/images/bo.jpg",
      email:"info@codingexplained.com",
+     password: '12345',
      messages: [
     {
         subject: 'How did we do?',
@@ -360,10 +361,11 @@ export default [{
     	name:"Ivan Ivanov (Shavliuga)",
     	site:"https://isschavliuga.ucoz.net",
     	email:"iva.drakon.nov@gmail.com",
+    	password: '12345',
     	messages:[{
         subject: 'Forked vuejs-mail-app',
         content: `
-            <p>User Ivan Ivanov (Shavliouga) forked project Bo Andersen vuejs-mail-app</p>
+            <p>User Ivan Ivanov (Shavliuga) forked project Bo Andersen vuejs-mail-app</p>
             <p>Added users.js</p>
             <p>contact: <a href='mailto://iva.drakon.nov@gmail.com'>iva.drakon.nov@gmail.com</a></p>
             <p>profession: junior frontend developer</p>
@@ -394,7 +396,7 @@ export default [{
     },{
         subject: 'installed the linux operating system rosa R8 mate',
         content: `
-            <p>User Ivan Ivanov (Shavliouga) finstalled the linux operating system rosa R8 mate</p>
+            <p>User Ivan Ivanov (Shavliuga) finstalled the linux operating system rosa R8 mate</p>
             <p>installed the linux operating system rosa R8 mate. </p>
             <p>The computer is very old and broken. However, it works and can be programmed on it. 
             Windows XP eats twice as much memory as the Russian operating system LINUX ROSA</p>

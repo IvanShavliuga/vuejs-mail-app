@@ -31,28 +31,32 @@
     color: #fff;
     height: 90px;
     padding: 20px;
+   
 }
+.user-avatar {
+	 padding: 10px;
+}
+.user-avatar img{
 
-.user-head img {
-    float: left;
     border-radius: 50%;
     width: 50px;
     height: 50px;
 }
 
-.user-head .user-name {
-    display: inline-block;
-    margin: 0 0 0 10px;
+.user-name {
+
+    margin: 10px;
+    width: 80%;
 }
 
-.user-head .user-name h5 {
+.user-head tr .user-name h5 {
     font-size: 14px;
     font-weight: 300;
     margin-bottom: 0;
     cursor: default;
 }
 
-.user-head .user-name .email-address {
+.user-head tr .user-name .email-address {
     color: #87e2e7;
     font-size: 12px;
     cursor: default;

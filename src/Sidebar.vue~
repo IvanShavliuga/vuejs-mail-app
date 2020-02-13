@@ -1,17 +1,19 @@
 <template>
     <aside class="sm-side">
-        <div class="user-head">
+        <table class="user-head">
+            <tr>
+            <td class="user-avatar">
             
             <img :src="user.avatar">
-
-            <div class="user-name">
+            </td>
+            <td class="user-name">
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user></app-user>
-            </div>
-            
-        </div>
+                <app-user :user="user"></app-user>
+            </td>
+            </tr>
+        </table>
 
         <div class="compose-wrapper">
             <app-compose></app-compose>
@@ -44,7 +46,7 @@
             
             <li :class="{ active: activeView == 'app-spam' }">
                 <a href="#" @click.prevent="navigate('app-spam', 'Spam')">
-                    <i class=" fa fa-warning"></i>Trash <span class="label label-default pull-right">{{ spamMessages.length }}</span>
+                    <i class=" fa fa-warning"></i>Spam <span class="label label-default pull-right">{{ spamMessages.length }}</span>
                 </a>
             </li>
             
@@ -55,7 +57,7 @@
 <script>
     import { eventBus } from './main';
     import Compose from './Compose.vue';
-    import User from './user.vue';    
+    import User from './User.vue';    
     
     export default {
         props: {
