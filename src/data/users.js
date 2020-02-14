@@ -1,6 +1,6 @@
 import moment from 'moment';
 export default [{ 
-     user: "BoAndersen",
+     user: "bo",
      site:"http://www.codingexplained.com",
      name:"Bo Andersen",
      avatar:"./src/assets/images/bo.jpg",

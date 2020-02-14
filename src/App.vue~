@@ -1,6 +1,25 @@
 <template>
     <div class="container">
-        User id: <input type="number" v-model="userId"/><button @click="changeUser">change</button>
+        <div class="row">
+        <div class="col col-lg-2" style="width:20%;display:inline-block">
+        <form  role="form" class="form">
+        Login:
+        <input type="login" v-model="login" class="form-control"/>
+        <br>
+        Password:
+        <input type="password" v-model="password" class="form-control"/>
+        <br>
+        Status:
+        {{status}}
+        <br>        
+        <button @click="changeUser" class="btn btn-primary">Log in</button>
+        </form>
+        </div>
+        <div class="col col-lg-10" style="width:700px;display:inline-block;vertical-align:top">
+           <h1>Vue.js mail app</h1>
+           
+        </div>
+        </div>
         <div class="mail-box">
             
             <app-sidebar :messages="messages" :user="user"></app-sidebar>
@@ -22,15 +41,34 @@
         data() {
             return {
                 userId:userId,
+                login:"",
+                password:"",
+                status:"",
                 user: users[userId],
                 messages: users[userId].messages
             };
         },
         methods: {
             changeUser() {
-                this.user=users[this.userId];
-                this.messages=users[this.userId].messages;             
+                let temp=users.filter((i)=>{console.log(i.user);return this.login==i.user});
+                console.log(temp)                
+                if(temp[0]===undefined) {
+                   this.status="User "+this.login+" not found";
+                   console.log("ddd")
+                   return false;            
+                }else{
+                if(temp[0].password===this.password) {
+                   this.status="Success "+temp[0].name+"!";
+                   this.user=temp[0];
+                   this.messages=temp[0].messages;
+                   return true;
+                }else{
+                   this.status="Error password";
+                   return false;                 
+                }  
+                }           
             }
+            
         },/*,
         created() {
             eventBus.$on('refreshMessages', () => {

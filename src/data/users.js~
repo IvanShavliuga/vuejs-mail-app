@@ -3,7 +3,7 @@ export default [{
      user: "BoAndersen",
      site:"http://www.codingexplained.com",
      name:"Bo Andersen",
-     avatar:"src/assets/images/bo.jpg",
+     avatar:"./src/assets/images/bo.jpg",
      email:"info@codingexplained.com",
      password: '12345',
      messages: [
