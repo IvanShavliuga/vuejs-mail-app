@@ -10,7 +10,7 @@
             </button>
             
            <button class="btn btn-danger" @click="data.message.isSpam = true" :disabled="data.message.isSpam">
-                <i class="fa fa-warning"></i>&nbsp; {{ data.message.isSpam ? 'Fixed as spam' : 'Spam' }}
+                <i class="fa fa-warning"></i>&nbsp; {{ data.message.isSpam ? 'Fixed as spam' : 'SPAM' }}
             </button>            
             
             <template v-if="typeof data.message.isRead !== 'undefined'">
@@ -26,6 +26,7 @@
 
         <p><strong>Date:</strong> {{ data.message.date.fromNow() }}</p>
         <p><strong>From:</strong> {{ data.message.from.name }} <{{ data.message.from.email }}></p>
+        <p><strong>To:</strong> <{{ data.message.to }}></p>
         <hr>
 
         <div v-html="data.message.content" class="message"></div>

@@ -88,10 +88,12 @@
             	  this.user.site= this.useredit.site;
                  this.user.user= this.useredit.user;
                  this.user.email=this.useredit.email;
-                 this.user.password=this.user.password;
+                 
                  return true;
               }else{
-                 return false;              
+                 this.useredit.password=this.user.password;
+                 return false;  
+                             
               }
                  
                

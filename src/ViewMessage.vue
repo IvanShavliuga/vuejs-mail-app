@@ -26,6 +26,7 @@
 
         <p><strong>Date:</strong> {{ data.message.date.fromNow() }}</p>
         <p><strong>From:</strong> {{ data.message.from.name }} <{{ data.message.from.email }}></p>
+        <p><strong>To:</strong> <{{ data.message.to }}></p>
         <hr>
 
         <div v-html="data.message.content" class="message"></div>

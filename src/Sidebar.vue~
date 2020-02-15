@@ -16,7 +16,7 @@
         </table>
 
         <div class="compose-wrapper">
-            <app-compose></app-compose>
+            <app-compose :user></app-compose>
         </div>
 
         <ul class="inbox-nav">
