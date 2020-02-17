@@ -1,8 +1,8 @@
 <template>
     <div>
-        <a href="#composeModal" data-toggle="modal"  id="link" class="fa fa-edit">Edit data</a>
+        <a href="#userModal" data-toggle="modal"  id="link" class="fa fa-edit">Edit data</a>
 
-        <div aria-hidden="true" role="dialog" tabindex="-1" id="composeModal" class="modal fade" style="display: none;">
+        <div aria-hidden="true" role="dialog" tabindex="-1" id="userModal" class="modal fade" style="display: none;">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">

@@ -1,6 +1,6 @@
 import moment from 'moment';
 export default [{ 
-     user: "BoAndersen",
+     user: "bo",
      site:"http://www.codingexplained.com",
      name:"Bo Andersen",
      avatar:"./src/assets/images/bo.jpg",
@@ -20,6 +20,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(10, 'minutes'),
         from: {
             name: 'SurveyDonkey.com',
@@ -42,6 +43,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(30, 'minutes'),
         from: {
             name: 'Google',
@@ -61,6 +63,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(75, 'minutes'),
         from: {
             name: 'Facebook',
@@ -81,6 +84,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(2, 'days'),
         from: {
             name: 'Hotels.com',
@@ -102,6 +106,7 @@ export default [{
         isDeleted: false,
         isSpam: false,
         type: 'outgoing',
+        to:"test@test.com",
         date: moment().subtract(7, 'days'),
         from: {
             name: 'Bo Andersen',
@@ -121,6 +126,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(2, 'weeks'),
         from: {
             name: 'Amazon',
@@ -147,6 +153,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(2, 'months'),
         from: {
             name: 'Skype',
@@ -167,6 +174,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(3, 'months'),
         from: {
             name: 'We Spam, inc.',
@@ -185,6 +193,7 @@ export default [{
         `,
         isDeleted: false,
         type: 'outgoing',
+        to:"bab@test.com",
         isSpam: false,
         date: moment().subtract(100, 'days'),
         from: {
@@ -204,6 +213,7 @@ export default [{
         isDeleted: false,
         isSpam: false,
         type: 'outgoing',
+        to:"bab@test.com",
         date: moment().subtract(4, 'months'),
         from: {
             name: 'Bo Andersen',
@@ -223,6 +233,7 @@ export default [{
         isRead: true,
         type: 'incoming',
         isSpam: false,
+        to:"info@codingexplained.com",
         date: moment().subtract(5, 'months'),
         from: {
             name: 'Tax Authorities',
@@ -270,6 +281,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(7, 'months'),
         from: {
             name: 'Random Recruiter',
@@ -294,6 +306,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(8, 'months'),
         from: {
             name: 'YouTube',
@@ -321,6 +334,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(9, 'months'),
         from: {
             name: 'Slack',
@@ -342,6 +356,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"info@codingexplained.com",
         date: moment().subtract(10, 'months'),
         from: {
             name: 'SoundGear.com',
@@ -382,6 +397,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"iva.drakon.nov@gmail.com",
         date: moment().subtract(1, 'hours'),
         from: {
             name: 'vujs mail app',
@@ -406,6 +422,7 @@ export default [{
         isRead: false,
         isSpam: false,
         type: 'incoming',
+        to:"iva.drakon.nov@gmail.com",
         date: moment().subtract(3, 'days'),
         from: {
             name: 'rosalinux.com',
@@ -431,6 +448,7 @@ export default [{
         isRead: false,
         isSpam: true,
         type: 'incoming',
+        to:"iva.drakon.nov@gmail.com",
         date: moment().subtract(3, 'weeks'),
         from: {
             name: 'Денис Левин',
@@ -455,6 +473,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"iva.drakon.nov@gmail.com",
         date: moment().subtract(9, 'years'),
         from: {
             name: 'family-tree,org',

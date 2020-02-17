@@ -1,12 +1,35 @@
 <template>
     <div class="container">
-        User id: <input type="number" v-model="userId"/><button @click="changeUser">change</button>
-        <div class="mail-box">
-            
+        <div class="row"  style="padding:20px">
+           <div class="col col-lg-2" style="width:200px;display:inline-block">
+               <form  role="form" class="form">
+                 <label for="login">Login:</label>
+                 <input type="login" v-model="login" id="login" class="form-control"/>
+                 <br>
+                 <label for="password">Password:</label>
+                 <input type="password" v-model="password" class="form-control"/>
+                 <br>
+                 <p>Status: {{status}}</p>
+                 <br>        
+                 <button @click="changeUser" class="btn btn-primary">Sing in</button>
+              </form>
+           </div>
+           <div class="col col-lg-10" style="width:600px;display:inline-block;vertical-align:top">
+              <h1>Vue.js mail app</h1>
+              <p>Just a project for self-learning vue.js technology. Development of a multi-user mail application
+              (only frontend parts) for your own needs and learning vue.js for further professional growth as a specialist. 
+              The project must switch between users and be able to add new ones). It should be possible to send messages 
+              to spam, and forward messages between users.
+              </p>
+           </div>
+        </div>
+     
+        <div class="mail-box">   
             <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         </div>
-        
+
+     
     </div>
 </template>
 
@@ -18,35 +41,57 @@
     import randomMessages from './data/random-messages';*/
     import { eventBus } from './main';
     let userId=1; // for test
+
     export default {
         data() {
             return {
-                userId:userId,
-                user: users[userId],
-                messages: users[userId].messages
+                userId:1,
+                login:"",
+                password:"",
+                status:"",
+                user: users[1],
+                messages: users[1].messages
             };
         },
         methods: {
             changeUser() {
-                this.user=users[this.userId];
-                this.messages=users[this.userId].messages;             
+                let temp=users.filter((i)=>{return this.login==i.user});                
+                if(temp[0]===undefined) {
+                   this.status="User "+this.login+" not found";
+                }else{
+                        
+                if(temp[0].password===this.password) {
+                   this.status="Success "+temp[0].name+"!";
+                   this.user=temp[0];
+                   this.messages=temp[0].messages;
+                   
+                }else{
+                   this.status="Error password";
+                             
+                }  
+                }           
             }
-        },/*,
+            
+        },
         created() {
-            eventBus.$on('refreshMessages', () => {
+            /*eventBus.$on('refreshMessages', () => {
                 let randomIndex = Math.floor(Math.random() * randomMessages.length);
                 let temp = [randomMessages[randomIndex]];
                 this.messages = temp.concat(this.messages.slice(0));
             });
-
+            */
             eventBus.$on('sentMessage', (data) => {
                 let temp = [data.message];
                 this.messages = temp.concat(this.messages.slice(0));
             });
-        }*/
+        },
         components: {
             appSidebar: Sidebar,
             appContent: Content
         }
     }
 </script>
+<style>
+
+
+</style>
