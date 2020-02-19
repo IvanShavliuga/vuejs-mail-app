@@ -6,6 +6,7 @@ export default [{
      avatar:"./src/assets/images/bo.jpg",
      email:"info@codingexplained.com",
      password: '12345',
+     userId:0,
      messages: [
     {
         subject: 'How did we do?',
@@ -377,6 +378,7 @@ export default [{
     	site:"https://isschavliuga.ucoz.net",
     	email:"iva.drakon.nov@gmail.com",
     	password: '12345',
+    	userId:1,
     	messages:[{
         subject: 'Forked vuejs-mail-app',
         content: `

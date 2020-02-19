@@ -25,7 +25,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-lg-2 control-label" for="name">Email</label>
+                                <label class="col-lg-2 control-label" for="name"></label>
                                 <div class="col-lg-10">
                                     <input type="text" v-model="message.name" id="name" class="form-control">
                                 </div>
@@ -78,10 +78,10 @@
                 required: true
             }   
         },
-        created() {
+        updated() {
             this.message.name=this.user.name;
             this.message.from=this.user.email;
-            
+            console.log("compose "+this.user.name);
         },
         methods: {
             sendMessage() {
