@@ -473,6 +473,7 @@ export default [{
         isRead: true,
         isSpam: false,
         type: 'incoming',
+        to:"iva.drakon.nov@gmail.com",
         date: moment().subtract(9, 'years'),
         from: {
             name: 'family-tree,org',

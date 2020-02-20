@@ -1,4 +1,4 @@
-asz<template>
+<template>
     <aside class="lg-side">
         <div class="inbox-head">
             <h3>{{ currentView.title }}</h3>

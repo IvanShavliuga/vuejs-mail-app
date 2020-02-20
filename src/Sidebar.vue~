@@ -10,13 +10,13 @@
                 
                 <h5>{{user.name}}</h5>
                 <span class="email-address">{{user.email}}</span>
-                <app-user :user="user"></app-user>
+                <app-user :user="userdata" @click="userclick"></app-user>
             </td>
             </tr>
         </table>
 
         <div class="compose-wrapper">
-            <app-compose :user></app-compose>
+            <app-compose :user="userdata"></app-compose>
         </div>
 
         <ul class="inbox-nav">
@@ -79,6 +79,7 @@
             eventBus.$on('changeView', (data) => {
                 this.activeView = data.tag;
             });
+            this.userdata=this.user;  
         },
         methods: {
             navigate(newView, title) {

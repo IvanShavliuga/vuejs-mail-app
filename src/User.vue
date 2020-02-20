@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#userModal" data-toggle="modal"  id="link" class="fa fa-edit">Edit data</a>
+        <a href="#userModal" data-toggle="modal"  id="link" class="fa fa-edit" @click = "userupdate">Edit data</a>
 
         <div aria-hidden="true" role="dialog" tabindex="-1" id="userModal" class="modal fade" style="display: none;">
             <div class="modal-dialog">
@@ -73,13 +73,12 @@
                 status:""
             };
         },
-        created(){
-            this.useredit.name= this.user.name;
-            this.useredit.site= this.user.site;
-            this.useredit.user= this.user.user;
-            this.useredit.email=this.user.email;
-            this.useredit.password=this.user.password;
-            this.status="Data load "+this.user.name;        
+        created() {
+            console.log("compose "+this.user.name);
+            this.useredit=this.$store.getters.user;
+        },
+        mounted(){
+            this.useredit=this.$store.getters.user;       
         },
         methods:{
             sendUser() {
@@ -88,15 +87,14 @@
             	  this.user.site= this.useredit.site;
                  this.user.user= this.useredit.user;
                  this.user.email=this.useredit.email;
-                 
                  return true;
               }else{
                  this.useredit.password=this.user.password;
-                 return false;  
-                             
-              }
-                 
-               
+                 return false;                               
+              }             
+            },
+            userupdate(){
+                 this.useredit=this.$store.getters.user;
             }          
         }
     }

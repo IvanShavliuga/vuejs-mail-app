@@ -11,7 +11,7 @@
                  <br>
                  <p>Status: {{status}}</p>
                  <br>        
-                 <button @click="changeUser" class="btn btn-primary">Sing in</button>
+                 <button @click.prevent="changeUser" class="btn btn-primary">Sing in</button>
               </form>
            </div>
            <div class="col col-lg-10" style="width:600px;display:inline-block;vertical-align:top">
@@ -23,9 +23,8 @@
               </p>
            </div>
         </div>
-     
         <div class="mail-box">   
-            <app-sidebar :messages="messages" :user="user"></app-sidebar>
+             <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         </div>
 
@@ -50,28 +49,29 @@
                 password:"",
                 status:"",
                 user: users[1],
-                messages: users[1].messages
-            };
-        },
+                messages: users[1].messages,
+                users: users
+            }
+         },
         methods: {
             changeUser() {
                 let temp=users.filter((i)=>{return this.login==i.user});                
                 if(temp[0]===undefined) {
                    this.status="User "+this.login+" not found";
                 }else{
-                        
-                if(temp[0].password===this.password) {
-                   this.status="Success "+temp[0].name+"!";
-                   this.user=temp[0];
-                   this.messages=temp[0].messages;
+                   if(temp[0].password===this.password) {
+	                   this.status="Success "+temp[0].name+"!";
+	                   this.$store.dispatch('signIn',temp[0]);
+	                   this.user = this.$store.getters.users[this.$store.getters.userId];
+	                   this.messages = this.$store.getters.users[this.$store.getters.userId].messages;  
+	                   this.userId = this.$store.getters.userId; 
                    
-                }else{
-                   this.status="Error password";
-                             
-                }  
-                }           
+	                }else{
+	                   this.status="Error password";
+	                             
+	                }  
+                }
             }
-            
         },
         created() {
             /*eventBus.$on('refreshMessages', () => {
@@ -82,8 +82,29 @@
             */
             eventBus.$on('sentMessage', (data) => {
                 let temp = [data.message];
-                this.messages = temp.concat(this.messages.slice(0));
+                let msg=temp.concat(this.messages.slice(0));
+                this.$store.dispatch('sentMessage',{user:this.user,messages:msg,userId:this.user.userId});
+                this.messages = this.$store.getters.messages;
             });
+            eventBus.$on('signUp', () => {
+                console.log("sign up");
+                let temp=this.users.filter((i)=>{return this.login==i.user});                
+                if(temp[0]===undefined) {
+                   this.status="User "+this.login+" not found";
+                }else{ 
+                   if(temp[0].password===this.password) {
+                      this.status="Success "+temp[0].name+"!";
+                      this.user=temp[0];
+                      this.messages=temp[0].messages;    
+                      this.$store.dispatch('signIn',temp[0]);       
+                   }else{
+                      this.status="Error password";
+                   }  
+                }  
+            });
+            this.user = this.$store.getters.users[this.$store.getters.userId];
+            this.messages = this.$store.getters.users[this.$store.getters.userId].messages;
+            this.users =this.$store.getters.users;
         },
         components: {
             appSidebar: Sidebar,
