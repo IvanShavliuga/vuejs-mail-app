@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row"  style="padding:20px">
-           <div class="col col-lg-2" style="width:200px;display:inline-block">
+           <div class="col col-lg-2 loginform">
                <form  role="form" class="form">
                  <label for="login">Login:</label>
                  <input type="login" v-model="login" id="login" class="form-control"/>
@@ -15,8 +15,7 @@
               </form>
            </div>
            <div class="col col-lg-10 header">
-              
-              
+             &nbsp;
            </div>
         </div>
         <div>
@@ -124,5 +123,8 @@
     vertical-align:top;
     height:450px;
 }
-
+.loginform{
+    width:200px;
+    display:inline-block
+}
 </style>
