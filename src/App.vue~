@@ -14,27 +14,28 @@
                  <button @click.prevent="changeUser" class="btn btn-primary">Sing in</button>
               </form>
            </div>
-           <div class="col col-lg-10" style="width:600px;display:inline-block;vertical-align:top">
+           <div class="col col-lg-10 header">
               <h1>Vue.js mail app</h1>
-              <p>Just a project for self-learning vue.js technology. Development of a multi-user mail application
-              (only frontend parts) for your own needs and learning vue.js for further professional growth as a specialist. 
-              The project must switch between users and be able to add new ones). It should be possible to send messages 
-              to spam, and forward messages between users.
-              </p>
+              
            </div>
         </div>
-        <div class="mail-box">   
-             <app-sidebar :messages="messages" :user="user"></app-sidebar>
+        <div>
+        <div class="mail-box" v-if="mailview">   
+            <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
+        
         </div>
-
-     
+        <div v-else>
+            <app-index></app-index> 
+        </div>
+        </div>     
     </div>
 </template>
 
 <script>
     import Sidebar from './Sidebar.vue';
     import Content from './Content.vue';
+    import Index from './Index.vue';
     import users from './data/users';
     /*import messages from './data/messages';
     import randomMessages from './data/random-messages';*/
@@ -47,10 +48,11 @@
                 userId:1,
                 login:"",
                 password:"",
-                status:"",
+                status:"Please log in to view your email.",
                 user: users[1],
                 messages: users[1].messages,
-                users: users
+                users: users,
+                mailview:false
             }
          },
         methods: {
@@ -65,6 +67,7 @@
 	                   this.user = this.$store.getters.users[this.$store.getters.userId];
 	                   this.messages = this.$store.getters.users[this.$store.getters.userId].messages;  
 	                   this.userId = this.$store.getters.userId; 
+	                   this.mailview = true;
                    
 	                }else{
 	                   this.status="Error password";
@@ -108,11 +111,18 @@
         },
         components: {
             appSidebar: Sidebar,
-            appContent: Content
+            appContent: Content,
+            appIndex:   Index
         }
     }
 </script>
 <style>
-
+.header {
+    background: url("assets/images/header.png") center center  no-repeat;
+    width:600px;
+    display:inline-block;
+    vertical-align:top;
+    height:450px;
+}
 
 </style>
