@@ -59,17 +59,17 @@
                 if(temp[0]===undefined) {
                    this.status="User "+this.login+" not found";
                 }else{
-                if(temp[0].password===this.password) {
-                   this.status="Success "+temp[0].name+"!";
-                   this.$store.dispatch('signIn',temp[0]);
-                   this.user = this.$store.getters.users[this.$store.getters.userId];
-                   this.messages = this.$store.getters.users[this.$store.getters.userId].messages;  
-                   this.userId = this.$store.getters.userId; 
+                   if(temp[0].password===this.password) {
+	                   this.status="Success "+temp[0].name+"!";
+	                   this.$store.dispatch('signIn',temp[0]);
+	                   this.user = this.$store.getters.users[this.$store.getters.userId];
+	                   this.messages = this.$store.getters.users[this.$store.getters.userId].messages;  
+	                   this.userId = this.$store.getters.userId; 
                    
-                }else{
-                   this.status="Error password";
-                             
-                }  
+	                }else{
+	                   this.status="Error password";
+	                             
+	                }  
                 }
             }
         },
@@ -101,8 +101,7 @@
                       this.status="Error password";
                    }  
                 }  
-            }); 
-            console.log("created ")
+            });
             this.user = this.$store.getters.users[this.$store.getters.userId];
             this.messages = this.$store.getters.users[this.$store.getters.userId].messages;
             this.users =this.$store.getters.users;

@@ -41,7 +41,7 @@ export default new Vuex.Store({
              state.user = obj.user;
              state.messages=obj.messages;
              state.userId = obj.userId;  
-             console.log("obj store "+obj.user+" "+obj.messages.length+" "+obj.userId)                  
+             console.log("obj store "+obj.user.name+" "+obj.messages.length+" "+obj.userId)                  
         },
         'CHANGEUSER' (state,obj) {
         	    console.log("change user: " +obj.userId);

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#composeModal" data-toggle="modal" class="btn btn-compose">Compose</a>
+        <a href="#composeModal" data-toggle="modal" class="btn btn-compose" @click="updatemsg">Compose</a>
 
         <div aria-hidden="true" role="dialog" tabindex="-1" id="composeModal" class="modal fade" style="display: none;">
             <div class="modal-dialog">
@@ -78,9 +78,7 @@
                 required: true
             }   
         },
-        mounted() {
-            this.message.name=this.user.name;
-            this.message.from=this.user.email;
+        created() {
             console.log("compose "+this.user.name);
         },
         methods: {
@@ -99,6 +97,10 @@
                         attachments: []
                     }
                 });
+            },
+            updatemsg(){
+                 this.message.name=this.user.name;
+                 this.message.from=this.user.email;
             }
         }
     }

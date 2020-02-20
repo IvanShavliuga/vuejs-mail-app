@@ -35,7 +35,8 @@ export default new Vuex.Store({
         	     console.log("sign in store ") 
              state.user=user;
              state.messages=user.messages;  
-             state.userId=user.userId;      
+             state.userId=user.userId;    
+             console.log("sign in store "+state.userId)   
         },
         'SENTMESSAGE' (state,obj) {
              state.user = obj.user;
