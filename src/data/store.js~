@@ -32,7 +32,7 @@ export default new Vuex.Store({
     },
     mutations:{
         'SIGNIN' (state, user) {
-        	   
+        	     console.log("sign in store ") 
              state.user=user;
              state.messages=user.messages;  
              state.userId=user.userId;      
@@ -40,7 +40,8 @@ export default new Vuex.Store({
         'SENTMESSAGE' (state,obj) {
              state.user = obj.user;
              state.messages=obj.messages;
-             state.userId = obj.userId;                    
+             state.userId = obj.userId;  
+             console.log("obj store "+obj.user+" "+obj.messages.length+" "+obj.userId)                  
         },
         'CHANGEUSER' (state,obj) {
         	    console.log("change user: " +obj.userId);

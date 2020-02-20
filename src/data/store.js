@@ -40,7 +40,8 @@ export default new Vuex.Store({
         'SENTMESSAGE' (state,obj) {
              state.user = obj.user;
              state.messages=obj.messages;
-             state.userId = obj.userId;                    
+             state.userId = obj.userId;  
+             console.log("obj store "+obj.user.name+" "+obj.messages.length+" "+obj.userId)                  
         },
         'CHANGEUSER' (state,obj) {
         	    console.log("change user: " +obj.userId);

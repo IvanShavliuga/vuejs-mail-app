@@ -23,10 +23,8 @@
               </p>
            </div>
         </div>
-     
         <div class="mail-box">   
-            
-            <app-sidebar :messages="messages" :user="user"></app-sidebar>
+             <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         </div>
 
@@ -54,16 +52,13 @@
                 messages: users[1].messages,
                 users: users
             }
-      
-           
-        },
+         },
         methods: {
             changeUser() {
                 let temp=users.filter((i)=>{return this.login==i.user});                
                 if(temp[0]===undefined) {
                    this.status="User "+this.login+" not found";
                 }else{
-                        
                 if(temp[0].password===this.password) {
                    this.status="Success "+temp[0].name+"!";
                    this.$store.dispatch('signIn',temp[0]);
@@ -76,10 +71,7 @@
                              
                 }  
                 }
-      
-                   
             }
-            
         },
         created() {
             /*eventBus.$on('refreshMessages', () => {
@@ -91,9 +83,8 @@
             eventBus.$on('sentMessage', (data) => {
                 let temp = [data.message];
                 let msg=temp.concat(this.messages.slice(0));
-                //this.messages = temp.concat(this.messages.slice(0));
-                this.$store.dispatch('sentMessage',{user:this.user,messages:msg});
-                this.messages = this.$store.getters.users[this.user.userId].messages;
+                this.$store.dispatch('sentMessage',{user:this.user,messages:msg,userId:this.user.userId});
+                this.messages = this.$store.getters.messages;
             });
             eventBus.$on('signUp', () => {
                 console.log("sign up");
@@ -105,33 +96,16 @@
                       this.status="Success "+temp[0].name+"!";
                       this.user=temp[0];
                       this.messages=temp[0].messages;    
-                      this.$store.dispatch('signIn',temp[0]);
-                      console.log("sign in app ") 
-                      //localStorage.setItem('sign in',temp[0]);            
+                      this.$store.dispatch('signIn',temp[0]);       
                    }else{
                       this.status="Error password";
                    }  
-                }   
-                console.log("temp "+temp[0].name);
-                console.log("this.user "+this.user.name);      
+                }  
             }); 
             console.log("created ")
             this.user = this.$store.getters.users[this.$store.getters.userId];
             this.messages = this.$store.getters.users[this.$store.getters.userId].messages;
             this.users =this.$store.getters.users;
-            //this.user = localStorage('sign in');
-           
-        },
-        mounted() {
-            /*this.user = this.$store.getters.users[this.$store.getters.userId];
-            this.messages = this.$store.getters.users[this.$store.getters.userId].messages;
-            this.users =this.$store.getters.users;*/
-        },
-        updated(){
-             /*console.log("this.user "+this.user.name); 
-             this.user = this.$store.getters.users[this.$store.getters.userId];
-             this.messages = this.$store.getters.users[this.$store.getters.userId].messages;
-             this.users =this.$store.getters.users;*/
         },
         components: {
             appSidebar: Sidebar,
