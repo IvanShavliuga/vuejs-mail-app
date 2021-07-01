@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="row"  style="padding:20px">
+        <div class="row"  style="padding:20px" v-if="!mailview">
            <div class="col col-lg-2 loginform">
                <form  role="form" class="form">
                  <label for="login">Login:</label>
@@ -18,23 +18,17 @@
              &nbsp;
            </div>
         </div>
-        <div>
-        <div class="mail-box" v-if="mailview">   
+        <div class="mail-box" v-else>   
             <app-sidebar :messages="messages" :user="user"></app-sidebar>
             <app-content :messages="messages"></app-content>
         
-        </div>
-        <div v-else>
-            <app-index></app-index> 
-        </div>
-        </div>     
+        </div> 
     </div>
 </template>
 
 <script>
     import Sidebar from './Sidebar.vue';
     import Content from './Content.vue';
-    import Index from './Index.vue';
     import users from './data/users';
     /*import messages from './data/messages';
     import randomMessages from './data/random-messages';*/
@@ -110,8 +104,7 @@
         },
         components: {
             appSidebar: Sidebar,
-            appContent: Content,
-            appIndex:   Index
+            appContent: Content
         }
     }
 </script>
@@ -125,6 +118,6 @@
 }
 .loginform{
     width:200px;
-    display:inline-block
+    display:inline;
 }
 </style>
